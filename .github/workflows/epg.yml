@@ -127,7 +127,10 @@ jobs:
 
           # 时区
           sed -i 's/+0000/+0800/g' e.xml
-
+          
+          # ★ 注入频道别名（CCTV1综合 等播放器显示名）
+          python3 assets/epg_aliases.py e.xml
+          
           # 压缩
           gzip -9 -c e.xml > e.xml.gz
 
